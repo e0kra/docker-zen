@@ -6,18 +6,18 @@ Available on [Docker Hub](https://hub.docker.com/r/e0kra/zen/).
 
 ## Build
 
-    docker build --tag e0kra/zen build/
+    docker build --tag e0kra/zen:build build/
 
 ## Tag & Push
 
-    docker push e0kra/zen
+    docker push e0kra/zen:build
 
 ## Download
 
-    docker pull e0kra/zen
+    docker pull e0kra/zen:build
 
 ## Run
 
 Simplest version:
 
-    docker run -d --name zen -p 9033:9033 -v $HOME/.zencash:/root/.zen -v $HOME/.zcash-params:/root/.zcash-params e0kra/zen
+    docker run -d --name zen -p 9033:9033 -v $HOME/.zencash:/root/.zen -v $HOME/.zcash-params:/root/.zcash-params e0kra/zen:build
