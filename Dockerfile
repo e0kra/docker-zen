@@ -8,7 +8,7 @@ ENV BUILD_PACKAGES="build-essential pkg-config libc6-dev m4 g++-multilib autocon
 RUN \
 	apt-get update && apt-get install -y $BUILD_PACKAGES $RUNTIME_PACKAGES && \
 	cd ~ && git clone https://github.com/zencashio/zen.git && cd ~/zen && \
-	git checkout master && ./zcutil/build.sh -j$(nproc) && cd ~/zen/src && \
+	git checkout v.2.0.8-4 && ./zcutil/build.sh -j$(nproc) && cd ~/zen/src && \
 	cp zend zen-cli zen-gtest zen-tx /usr/local/bin/ && cd ~ && rm -rf zen && \
 	apt-get remove --purge -y $BUILD_PACKAGES $(apt-mark showauto) && \
 	rm -rf /var/lib/apt/lists/*
